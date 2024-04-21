@@ -1,83 +1,16 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <title>{{ config('app.name', 'Adamu Dabo Foundation') }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('asset/image/favicon.ico') }}" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-</head>
-
-<body style="font-family: 'Poppins', sans-serif;" class="h-screen">
-    <nav class="bg-primary  dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b ">
-        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="{{ route('welcome') }}"
-                class="flex bg-white rounded-full px-2 py-1 items-center space-x-3 rtl:space-x-reverse">
-                <img src="{{ asset('asset/image/adb-logo.png') }}" class="h-10" alt="Flowbite Logo">
-
-            </a>
-            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-                {{-- <button type="button"
-                    class=" bg-secondary hover:bg-tertiary focus:ring-4 focus:outline-none text-black font-medium rounded-lg text-sm px-4 py-2 text-center">Donate</button> --}}
-                <button data-collapse-toggle="navbar-sticky" type="button"
-                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                    aria-controls="navbar-sticky" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                        viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-            </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <a href="{{ route('welcome') }}"
-                            class="block py-2 px-3 text-white  rounded md:bg-transparent  md:p-0 "
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('about') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('what-we-do') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0  dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">What
-                            We Do</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('welcome') }}"
-                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact
-                            Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+<x-guest-layout>
     <section class="bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken  "
         style=" background-image: url('asset/image/background.jpg'); background-color: rgba(41, 40, 43, 0.75);
-background-repeat: no-repeat;
-
-background-size: cover;
+background-repeat: no-repeat; background-size: cover;
 ">
         <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">
             <h1 class="mb-4 text-5xl font-black w-full  md:w-1/2 text-white md:text-5xl lg:text-6xl">
                 Empowering Lives, Enriching Communities</h1>
-
             <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
-
-                <a class="px-8 py-3 w-fit text-sm font-bold text-black bg-white rounded-md" href="{{ 'what-we-do' }}">
+                <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md"
+                    href="{{ 'what-we-do' }}">
                     What we do
                 </a>
-
-
             </div>
         </div>
     </section>
@@ -105,14 +38,13 @@ background-size: cover;
                     </div>
                 </div>
             </div>
-
             <div class=" rounded-2xl ">
                 <img class=" rounded-2xl" src="asset/image/dawah-2.jpg" alt="">
             </div>
         </div>
         <div class="flex justify-center pt-8">
             <a href="{{ route('about') }}"
-                class="px-8 py-3 text-sm hover:bg-tertiary font-bold text-black bg-secondary rounded-md" href="#">
+                class="px-8 py-3 text-sm hover:bg-tertiary font-bold text-black bg-secondary rounded-md" >
                 Learn more
             </a>
         </div>
@@ -126,8 +58,6 @@ background-size: cover;
             <img class="h-16" src="{{ asset('asset/image/alfurqan.png') }}" alt="">
             <img class="h-16" src="{{ asset('asset/image/fedpolylogo.jpg') }}" alt="">
             <img class="h-16" src="{{ asset('asset/image/nigeria.jpg') }}" alt="">
-
-
         </div>
     </div>
 
@@ -179,8 +109,7 @@ background-size: cover;
                             <div class="flex gap-8">
                                 <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect y="0.358887" width="28" height="28" rx="4"
-                                        fill="black" />
+                                    <rect y="0.358887" width="28" height="28" rx="4" fill="black" />
                                     <path
                                         d="M13.8822 12.6007C14.0516 12.6634 14.2177 12.5099 14.1616 12.3465C13.7763 11.2253 12.3814 10.807 11.0848 11.8018C10.4027 12.3251 10.1464 12.4363 10.1399 12.4391C10.5896 12.8637 11.1033 14.2885 12.2244 14.4461C13.4593 14.6576 14.5523 13.51 13.6581 12.9849C13.07 12.6396 12.3776 12.4391 11.6353 12.4391C12.4134 12.2734 13.1902 12.3444 13.8822 12.6007Z"
                                         fill="#FFEBB9" />
@@ -194,7 +123,7 @@ background-size: cover;
 
 
                                 <div class="space-y-2 w-4/5">
-                                    <h1 class="text-lg font-semibold">Health Benefit</h1>
+                                    <h1 class="text-lg font-semibold">Health Support</h1>
                                     <p>At the core of its humanitarian efforts, the Adamu Dabo Foundation prioritizes
                                         health and well-being. Through the provision of Ramadan Iftar in hospitals and
                                         the dedicated care for seriously ill individuals, the foundation addresses
@@ -207,8 +136,7 @@ background-size: cover;
 
                                 <svg width="28" height="29" viewBox="0 0 28 29" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
-                                    <rect y="0.358887" width="28" height="28" rx="4"
-                                        fill="black" />
+                                    <rect y="0.358887" width="28" height="28" rx="4" fill="black" />
                                     <path
                                         d="M22.797 19.8003C22.5191 19.6071 22.2746 19.37 22.0729 19.0982C21.5902 18.5497 20.9759 17.8695 19.835 17.8695C18.694 17.8695 18.1016 18.5277 17.597 19.1201C17.0923 19.7125 16.7632 20.0636 16.0172 20.0636C15.2712 20.0636 14.8982 19.6467 14.4375 19.1201C13.9767 18.5935 13.3624 17.8695 12.1995 17.8695C11.0366 17.8695 10.4662 18.5277 9.96149 19.1201C9.45686 19.7125 9.12773 20.0636 8.38175 20.0636C7.63576 20.0636 7.26275 19.6467 6.802 19.1201C6.48879 18.7065 6.09273 18.3627 5.63912 18.1108C5.42099 18.0018 5.15578 18.0902 5.04672 18.3083C4.93765 18.5264 5.02606 18.7916 5.24419 18.9007C5.58868 19.1083 5.89333 19.3758 6.14375 19.6906C6.64838 20.283 7.24078 20.9412 8.38175 20.9412C9.52271 20.9412 10.1151 20.283 10.6197 19.6906C11.1244 19.0982 11.4535 18.7471 12.1995 18.7471C12.9455 18.7471 13.3185 19.164 13.7792 19.6906C14.24 20.2172 14.8543 20.9412 16.0172 20.9412C17.1801 20.9412 17.7505 20.283 18.2552 19.6906C18.7598 19.0982 19.089 18.7471 19.835 18.7471C20.5809 18.7471 20.9539 19.164 21.4147 19.6906C21.6704 20.0189 21.9736 20.3073 22.3143 20.5462C22.5203 20.6795 22.7953 20.6206 22.9286 20.4146C23.062 20.2086 23.003 19.9336 22.797 19.8003Z"
                                         fill="#FFEBB9" />
@@ -250,13 +178,14 @@ background-size: cover;
 
         </div>
         <div class="flex justify-center pt-8">
-            <a href="#" class="px-8 py-3 text-sm font-bold text-black bg-secondary rounded-md" href="#">
+            <a href="#" class="px-8 py-3 text-sm hover:bg-tertiary font-bold text-black bg-secondary rounded-md"
+                href="{{ route('what-we-do') }}">
                 Learn more
             </a>
         </div>
     </div>
     <div class="w-full py-1 md:text-justify ">
-        <div class=" p-4 md:p-0 mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-6xl ">
+        <div class=" p-4 md:p-0 mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-7xl ">
             <div class="flex gap-8">
                 <hr class="w-10 hidden md:block h-0.5 bg-gray-800 ">
                 <div class="space-y-5">
@@ -288,194 +217,44 @@ background-size: cover;
                         <div>
                             <a class="py-2 px-4 bg-white rounded-md text-black" href="#">Learn more</a>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="rounded-xl bg-blend-darken w-full py-10 md:w-1/3"
                     style=" background-image: url('asset/image/adb-10.jpg'); background-color: rgba(62, 40, 5, 0.75);
                         
                 background-size: cover;
                 ">
-
                     <div class="px-8 text-white space-y-5 py-10">
                         <h1 class="font-bold text-2xl">
                             Da'awah Activity to Various Villages
                         </h1>
-
                         <p>The Foundation visited villages such as Nabardo, Gital, Dandango, Bazali, Fanti, Kussi, Dumi,
                             Gudum, Phalantulu, Lushi, Yuguda, Gubi and many other places in Bauchi State for Dawah
                             purposes.</p>
-
                         <div>
                             <a class="py-2 px-4 bg-white text-black rounded-md" href="#">Learn more</a>
                         </div>
-
                     </div>
-
                 </div>
-
                 <div class="rounded-xl bg-blend-darken w-full py-10 md:w-1/3"
-                    style=" background-image: url('asset/image/adb-7.jpg'); background-color: rgba(62, 40, 5, 0.75);
-                        
+                    style=" background-image: url('asset/image/adb-7.jpg'); background-color: rgba(62, 40, 5, 0.75);                       
                 background-size: cover;
                 ">
-
                     <div class="px-8  text-white space-y-5 py-10">
                         <h1 class="font-bold text-2xl">
                             Skills Acquisition
                         </h1>
-
                         <p>The Adamu Dabo Foundation is committed to creating sustainable impact by fostering
                             partnerships with skill acquisition institutions, ensuring that the youth and women not only
                             acquire diverse skills and resources to build a self-reliant
                             future. </p>
-
                         <div>
                             <a href="" class="py-2 px-4 bg-white rounded-md text-black" href="#">Learn
                                 more</a>
                         </div>
-
                     </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-    <div class="w-full py-1  h-2/3  ">
-        <div class="rounded-xl h-2/3 bg-blend-darken mt-10 mx-auto py-auto max-w-6xl"
-            style="background-image: url('asset/image/adb-11.jpg'); background-color: rgba(62, 40, 5, 0.75);
-               background-size: cover;">
-
-            <div class=" items-center  text-white flex flex-col justify-center h-full">
-                <h1 class="text-2xl">Your Can Contribute by Joining as a Volunteer Fisabillilah to be part of our
-                    Mission</h1>
-                <div class="flex md:flex-row flex-col space-y-8 items-center md:items-start md:space-x-8">
-                    <br>
-                    <div>
-                        <a class="py-2 px-4 bg-primary rounded-md text-white font-semibold" href="#">Join as a
-                            Volunteer</a>
-                    </div>
-
-                    {{-- <div>
-                        <a class="py-2 px-4 bg-white rounded-md text-black font-semibold" href="#">Donate</a>
-                    </div> --}}
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-    <div class=" max-w-6xl mx-auto justify-start">
-        <div class="flex items-center py-auto space-x-10">
-            <h1 class="font-bold text-3xl">Our Events</h1>
-            <hr class=" h-0.5  hidden md:block bg-gray-800  w-4/5">
-        </div>
-
-        <div class="flex md:flex-row flex-col mx-auto w-full py-auto my-10 space-y-3 md:space-x-10 items-center">
-            <div class="flex space-x-5 md:w-1/2 rounded-xl bg-tertiary px-8 py-10 items-center">
-                <div>
-                    <h1 class="font-bold text-4xl">13</h1>
-                    <h2 class="font-bold text-xl uppercase">Apr</h2>
-                </div>
-
-                <div>
-
-                    <div>
-                        <div class="flex items-center">
-                            <div class="font-semibold text-xl pr-4">
-                                Next Events
-                            </div>
-                            <hr class="px-4 h-0.5 border border-black bg-black  w-10">
-                        </div>
-                        <h1 class="font-bold text-2xl">
-                            Ramadan Iftar Feeding Program
-                        </h1>
-
-                    </div>
-                </div>
-                <div class="rounded-full justify-end bg-white p-2">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                    </a>
-
-
-                </div>
-            </div>
-            <div class="flex space-x-5 md:w-1/2 rounded-xl bg-tertiary px-8 py-10 items-center">
-                <div>
-                    <h1 class="font-bold text-4xl">13</h1>
-                    <h2 class="font-bold text-xl uppercase">Apr</h2>
-                </div>
-
-                <div>
-
-                    <div>
-                        <div class="flex items-center">
-                            <div class="font-semibold text-xl pr-4">
-                                Next Events
-                            </div>
-                            <hr class="px-4 h-0.5 border border-black bg-black  w-10">
-                        </div>
-                        <h1 class="font-bold text-2xl">
-                            Eid Fitr Lecture Program Program
-                        </h1>
-
-                    </div>
-                </div>
-                <div class="rounded-full justify-end bg-white p-2">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                            stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-                        </svg>
-                    </a>
                 </div>
             </div>
         </div>
     </div>
-    <footer class="bg-primary w-screen shadow dark:bg-gray-900 m-0">
-        <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-            <div class="sm:flex sm:items-center sm:justify-between">
-                <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
-                    <img src="{{ asset('asset/image/adb-logo.png') }}" class="h-16" alt="Flowbite Logo" />
-                    <span class="self-center md:text-2xl text-xl font-semibold whitespace-nowrap dark:text-white">Adamu
-                        Dabo
-                        Foundation</span>
-                </a>
-                <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0 ">
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-                    </li>
-                    <li>
-                        <a href="#" class="hover:underline">Contact</a>
-                    </li>
-                </ul>
-            </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-            <span class="block text-sm text-white sm:text-center ">© 2024 <a href="https://flowbite.com/"
-                    class="hover:underline">Adamu Dabo Foundation™</a>. All Rights
-                Reserved.</span>
-        </div>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-    <script src="{{ base_path('node_modules/flowbite/dist/flowbite.min.js') }}"></script>
-</body>
-
-</html>
+</x-guest-layout>

@@ -30,5 +30,8 @@ Route::get('/media', function () {
 })->name('media');
 
 Route::get('/contact', function () {
-    return view('welcome');
-});
+    return view('contact');
+})->name('contact');
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');

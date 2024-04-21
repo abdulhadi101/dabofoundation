@@ -15,9 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->foreignId('parent_id')->nullable()->constrained('categories')->cascadeOnDelete();
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_visible')->default(true);
             $table->longText('description')->nullable();
+            $table->string('seo_title', 60)->nullable();
+            $table->string('seo_description', 160)->nullable();
             $table->timestamps();
         });
     }

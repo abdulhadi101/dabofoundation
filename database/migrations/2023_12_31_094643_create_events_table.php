@@ -16,7 +16,9 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->string('slug')->unique();
+            $table->boolean('is_published')->default(true);
             $table->date('event_date');
+            $table->time('event_time');
             $table->timestamps();
         });
     }

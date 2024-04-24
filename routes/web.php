@@ -20,6 +20,11 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 })->name('about');
+Route::get('/become-a-volunteer', [\App\Http\Controllers\VolunteerController::class, 'index'])->name('volunteer');
+Route::post('/volunteer', [\App\Http\Controllers\VolunteerController::class, 'store'])->name('volunteer.create');
+Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])->name('event.index');
+Route::get('/events/{event:slug}', [\App\Http\Controllers\EventController::class, 'show'])->name('event.show');
+
 
 Route::get('/what-we-do', function () {
     return view('what-we-do');

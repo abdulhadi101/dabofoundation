@@ -1,29 +1,62 @@
 <x-guest-layout>
-    <section class="bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken  "
-        style=" background-image: url('asset/image/background.jpg'); background-color: rgba(41, 40, 43, 0.75);
-background-repeat: no-repeat; background-size: cover;
-">
-        <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">
-            <h1 class="mb-4 text-5xl font-black w-full  md:w-1/2 text-white md:text-5xl lg:text-6xl">
-                Empowering Lives, Enriching Communities</h1>
-            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
-                <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md"
-                    href="{{ 'what-we-do' }}">
-                    What we do
-                </a>
+    <div x-data="{ images: ['asset/image/background.jpg', 'asset/image/background2.jpg', 'asset/image/background3.jpg'], currentIndex: 0 }">
+        <section id="slider" class="relative bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken" x-bind:style="'background-image: url(' + images[currentIndex] + '); background-color: rgba(41, 40, 43, 0.75); background-repeat: no-repeat; background-size: cover;'">
+            <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">
+                <h1 class="mb-4 text-5xl font-black w-full md:w-1/2 text-white md:text-5xl lg:text-6xl">
+                    Empowering Lives, Enriching Communities
+                </h1>
+                <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
+                    <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md" href="{{ 'what-we-do' }}">
+                        What we do
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
-    <div>
+            <button @click="currentIndex = (currentIndex - 1 + images.length) % images.length" class="absolute top-1/2 left-4 transform -translate-y-1/2 px-4 py-2  text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+
+            </button>
+            <button @click="currentIndex = (currentIndex + 1) % images.length" class="absolute top-1/2 right-4 transform -translate-y-1/2  px-4 py-2 text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+
+            </button>
+
+        </section>
+    </div>
+
+{{--        <section class="bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken  "--}}
+{{--        style=" background-image: url('asset/image/background.jpg'); background-color: rgba(41, 40, 43, 0.75);--}}
+{{--background-repeat: no-repeat; background-size: cover;--}}
+{{--">--}}
+{{--        <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">--}}
+{{--            <h1 class="mb-4 text-5xl font-black w-full  md:w-1/2 text-white md:text-5xl lg:text-6xl">--}}
+{{--                Empowering Lives, Enriching Communities</h1>--}}
+{{--            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">--}}
+{{--                <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md"--}}
+{{--                    href="{{ 'what-we-do' }}">--}}
+{{--                    What we do--}}
+{{--                </a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </section>--}}
+    <div class="">
         <div
-            class="flex md:flex-row flex-col mx-auto py-auto mt-20 w-full text-justify  md:max-w-7xl justify-between items-center">
+            class="flex md:flex-row flex-col mx-auto py-auto mt-20 w-full text-justify md:max-w-7xl justify-between items-center">
             <div class="md:w-1/2 w-full p-3 md:p-0 space-y-5">
 
                 <div class="flex md:flex-row flex-col gap-8">
-                    <hr class="md:w-1/2 hidden md:block w-full h-0.5 bg-gray-800 ">
+
                     <div class="space-y-6">
-                        <h1 class="uppercase -mt-2 font-bold text-base"> Know About us</h1>
-                        <h1 class="text-2xl md:text-4xl font-bold">DR. DANJUMA ADAMU DABO FOUNDATION</h1>
+                        <div class="flex items-center space-x-10">
+                            <div class="h-24  w-4 bg-primary">
+                            </div>
+                            <h1 class="uppercase text-4xl items-center font-bold"> Know About us</h1>
+                        </div>
+
+                        <h1 class="text-2xl md:text-2xl font-bold">DR. DANJUMA ADAMU DABO FOUNDATION</h1>
                         <p class="text-lg">
                             Adamu Dabo Foundation was founded by Dr. Danjuma Adamu Dabo on 1st January, 2020. The idea
                             was
@@ -50,27 +83,34 @@ background-repeat: no-repeat; background-size: cover;
         </div>
     </div>
     <div class=" md:max-w-7xl w-full py-8 mx-auto justify-start">
-        <div class="flex md:flex-row flex-col items-center py-auto mt-16 space-x-2">
-            <h1 class="font-bold text-base">OUR SUPPORTERS / PARTNERS</h1>
-            <hr class=" h-0.5 hidden md:block bg-gray-800 w-full md:w-4/5">
+
+        <div class="flex space-y-6 items-center py-auto mt-16 space-x-10">
+            <div class="h-24  w-4 bg-primary">
+            </div>
+            <h1 class="font-bold ml-3 text-4xl"> SOME OF OUR SUPPORTERS AND PARTNERS</h1>
+
         </div>
-        <div class="flex mx-auto py-auto px-10 md:px-0 my-10 space-x-10 max-w-7xl justify-between items-center">
-            <img class="h-16" src="{{ asset('asset/image/alfurqan.png') }}" alt="">
-            <img class="h-16" src="{{ asset('asset/image/fedpolylogo.jpg') }}" alt="">
-            <img class="h-16" src="{{ asset('asset/image/nigeria.jpg') }}" alt="">
+        <div class="flex mx-auto py-auto px-10 md:px-0 my-10 space-x-10 max-w-7xl items-center">
+            <img class="h-24" src="{{ asset('asset/image/alfurqan.png') }}" alt="">
+            <img class="h-24" src="{{ asset('asset/image/fedpolylogo.jpg') }}" alt="">
+            <img class="h-24" src="{{ asset('asset/image/nigeria.jpg') }}" alt="">
         </div>
     </div>
 
-    <div class="w-full py-10 bg-background">
+    <div class="w-full pt-1 pb-6 bg-background">
         <div
             class="flex md:flex-row flex-col space-x-3 mx-auto py-auto md:mt-20 mt-5 w-full md:max-w-7xl justify-between items-center">
             <div class="md:w-1/2 w-full space-y-5">
 
-                <div class="flex text-justify md:flex-row flex-col p-4 md:p-0 gap-4">
-                    <hr class="w-36 hidden md:block h-0.5 bg-gray-800 ">
+                <div class="text-justify space-y-6  p-4 md:p-0 gap-4">
+                    <div class="flex space-x-10 items-center">
+                        <div class="h-24  w-4 bg-primary">
+                        </div>
+                        <h1 class=" uppercase text-4xl items-center font-bold"> What we do</h1>
+                    </div>
+
                     <div class="space-y-5">
-                        <h1 class=" uppercase -mt-2 font-bold text-base"> What we do</h1>
-                        <h1 class="text-4xl font-bold">Some of our philantropic Work we have done</h1>
+                        <h1 class="text-2xl font-bold">Some of our philantropic Work we have done</h1>
                         <p class="text-base">
                             Dr. Danjuma Adamu Dabo Foundation is a non-profitable organization established with no view
                             to generating profit and in which no part of the organization's income is distributed to its
@@ -150,7 +190,6 @@ background-repeat: no-repeat; background-size: cover;
                                         d="M5.24436 8.80784C5.58886 9.01547 5.8935 9.28298 6.14392 9.59771C6.64855 10.1901 7.24096 10.8484 8.38192 10.8484C9.52288 10.8484 10.1152 10.1902 10.6199 9.59771C11.1245 9.0053 11.4537 8.65425 12.1997 8.65425C12.9456 8.65425 13.3187 9.07115 13.7794 9.59771C14.2401 10.1243 14.8545 10.8484 16.0174 10.8484C17.1803 10.8484 17.7507 10.1902 18.2554 9.59771C18.76 9.0053 19.0891 8.65425 19.8351 8.65425C20.5811 8.65425 20.9541 9.07115 21.4149 9.59771C21.6706 9.92603 21.9738 10.2144 22.3144 10.4534C22.5204 10.5867 22.7955 10.5278 22.9288 10.3218C23.0621 10.1158 23.0032 9.8407 22.7971 9.7074C22.5192 9.51426 22.2747 9.2771 22.0731 9.0053C21.5904 8.45679 20.976 7.77661 19.8351 7.77661C18.6942 7.77661 18.1018 8.43482 17.5971 9.02727C17.0925 9.61967 16.7633 9.97072 16.0173 9.97072C15.2714 9.97072 14.8983 9.55382 14.4376 9.02727C13.9769 8.50067 13.3625 7.77661 12.1996 7.77661C11.0367 7.77661 10.4663 8.43482 9.96162 9.02727C9.45699 9.61967 9.12786 9.97072 8.38188 9.97072C7.63589 9.97072 7.26296 9.55382 6.80218 9.02723C6.48897 8.61356 6.0929 8.26982 5.63929 8.01792C5.42116 7.90886 5.15595 7.99726 5.04689 8.21539C4.93783 8.43352 5.02627 8.69877 5.24436 8.80784Z"
                                         fill="#FFEBB9" />
                                 </svg>
-
                                 <div class="space-y-2 w-4/5">
                                     <h1 class="text-lg font-semibold">Education</h1>
                                     <p class="text-justify"> By running an orphanage and facilitating skills
@@ -159,20 +198,13 @@ background-repeat: no-repeat; background-size: cover;
                                         foundation not only provides educational opportunities but also equips
                                         individuals with the skills necessary for a better future. </p>
                                 </div>
-
                             </div>
-
-
                         </div>
-
                     </div>
-
-
                 </div>
             </div>
 
             <div class="rounded-2xl">
-
                 <img class="rounded-2xl" src="asset/image/adb5.jpg" alt="">
             </div>
 
@@ -185,29 +217,28 @@ background-repeat: no-repeat; background-size: cover;
         </div>
     </div>
     <div class="w-full py-1 md:text-justify ">
-        <div class=" p-4 md:p-0 mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-7xl ">
+        <div class=" p-4 md:p-0 space-y-6 mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-7xl ">
             <div class="flex gap-8">
-                <hr class="w-10 hidden md:block h-0.5 bg-gray-800 ">
-                <div class="space-y-5">
-                    <h1 class=" uppercase -mt-2 font-bold text-base "> Our Programs</h1>
-                    <h1 class="text-4xl  font-bold">Some Programs We Have Embarked On</h1>
-
-
+                <div class="space-y-5 flex items-center">
+                <div class="h-24 w-4 bg-primary">
+                </div>
+                <h1 class=" font-bold ml-3 text-4xl"> Our Programs</h1>
                 </div>
 
             </div>
+            <h1 class="text-2xl  font-bold">Some Programs We Have Embarked On</h1>
 
-            <div class="flex p-4 md:flex-row flex-col space-y-3 md:space-x-8">
-                <br>
+            <div class="flex py-4 md:flex-row flex-col space-y-3 md:space-x-8">
+
 
                 <div class="rounded-xl bg-blend-darken w-full py-10 md:w-1/3"
                     style=" background-image: url('asset/image/adb-6.jpg'); background-color: rgba(62, 40, 5, 0.75);
-                        
+
                 background-size: cover;
                 ">
 
                     <div class="px-8  text-white space-y-5 py-10">
-                        <h1 class="font-bold text-2xl">
+                        <h1 class="font-bold text-left text-2xl">
                             Provision of Ramadan Iftar for hospitals
                         </h1>
 
@@ -221,7 +252,7 @@ background-repeat: no-repeat; background-size: cover;
                 </div>
                 <div class="rounded-xl bg-blend-darken w-full py-10 md:w-1/3"
                     style=" background-image: url('asset/image/adb-10.jpg'); background-color: rgba(62, 40, 5, 0.75);
-                        
+
                 background-size: cover;
                 ">
                     <div class="px-8 text-white space-y-5 py-10">
@@ -237,7 +268,7 @@ background-repeat: no-repeat; background-size: cover;
                     </div>
                 </div>
                 <div class="rounded-xl bg-blend-darken w-full py-10 md:w-1/3"
-                    style=" background-image: url('asset/image/adb-7.jpg'); background-color: rgba(62, 40, 5, 0.75);                       
+                    style=" background-image: url('asset/image/adb-7.jpg'); background-color: rgba(62, 40, 5, 0.75);
                 background-size: cover;
                 ">
                     <div class="px-8  text-white space-y-5 py-10">
@@ -257,4 +288,24 @@ background-repeat: no-repeat; background-size: cover;
             </div>
         </div>
     </div>
+
+    <div class="w-full py-1 h-[50vh]  ">
+        <div class="rounded-xl h-2/3 bg-blend-darken mt-10 mx-auto py-auto max-w-6xl"
+             style="background-image: url('asset/image/adb-11.jpg'); background-color: rgba(62, 40, 5, 0.75);
+               background-size: cover;">
+
+            <div class=" items-center  text-white flex flex-col justify-center h-full">
+                <h1 class="text-2xl">Your Can Contribute by Joining as a Volunteer Fisabillilah to be part of our
+                    Mission</h1>
+                <div class="flex md:flex-row flex-col space-y-8 items-center md:items-start md:space-x-8">
+                    <br>
+                    <div>
+                        <a class="py-2 px-4 bg-primary rounded-md text-white font-semibold" href="{{ route('volunteer') }}">Join as a
+                            Volunteer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </x-guest-layout>

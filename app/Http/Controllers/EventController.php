@@ -9,15 +9,13 @@ class EventController extends Controller
 {
     public function index()
     {
-        return view('flight.index');
+        return view('event.index');
     }
 
     public function show(Event $event)
     {
         return view('event.show', [
-
             'event' => $event,
-
         ]);
     }
 }

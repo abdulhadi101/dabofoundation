@@ -50,13 +50,13 @@
                 <div class="flex md:flex-row flex-col gap-8">
 
                     <div class="space-y-6">
-                        <div class="flex items-center space-x-10">
-                            <div class="h-24  w-4 bg-primary">
+                        <div class="flex items-center space-x-5 md:space-x-10">
+                            <div class="md:h-24 h-12 w-2  md:w-4 bg-primary">
                             </div>
-                            <h1 class="uppercase text-4xl items-center font-bold"> Know About us</h1>
+                            <h1 class="uppercase md:text-4xl text-2xl items-center font-bold"> Know About us</h1>
                         </div>
 
-                        <h1 class="text-2xl md:text-2xl font-bold">DR. DANJUMA ADAMU DABO FOUNDATION</h1>
+                        <h1 class="text-xl md:text-2xl font-bold">DR. DANJUMA ADAMU DABO FOUNDATION</h1>
                         <p class="text-lg">
                             Adamu Dabo Foundation was founded by Dr. Danjuma Adamu Dabo on 1st January, 2020. The idea
                             was
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" rounded-2xl ">
+            <div class=" px-2 rounded-2xl ">
                 <img class=" rounded-2xl" src="asset/image/dawah-2.jpg" alt="">
             </div>
         </div>
@@ -82,18 +82,18 @@
             </a>
         </div>
     </div>
-    <div class=" md:max-w-7xl w-full py-8 mx-auto justify-start">
+    <div class=" px-3 md:px-0 md:max-w-7xl w-full py-8 mx-auto justify-start">
 
-        <div class="flex space-y-6 items-center py-auto mt-16 space-x-10">
-            <div class="h-24  w-4 bg-primary">
+        <div class="flex items-center space-x-5 md:space-x-10">
+            <div class="md:h-24  h-12 w-2  md:w-4 bg-primary">
             </div>
-            <h1 class="font-bold ml-3 text-4xl"> SOME OF OUR SUPPORTERS AND PARTNERS</h1>
+            <h1 class="font-bold ml-3 text-2xl md:text-4xl"> OUR PARTNERS</h1>
 
         </div>
         <div class="flex mx-auto py-auto px-10 md:px-0 my-10 space-x-10 max-w-7xl items-center">
-            <img class="h-24" src="{{ asset('asset/image/alfurqan.png') }}" alt="">
-            <img class="h-24" src="{{ asset('asset/image/fedpolylogo.jpg') }}" alt="">
-            <img class="h-24" src="{{ asset('asset/image/nigeria.jpg') }}" alt="">
+            <img class="h-24 rounded-full" src="{{ asset('asset/image/alfurqan.png') }}" alt="">
+            <img class="h-24 rounded-full" src="{{ asset('asset/image/izala-logo.jpg') }}" alt="">
+            <img class="h-24" src="{{ asset('asset/image/jni-logo.jpg') }}" alt="">
         </div>
     </div>
 
@@ -104,13 +104,13 @@
 
                 <div class="text-justify space-y-6  p-4 md:p-0 gap-4">
                     <div class="flex space-x-10 items-center">
-                        <div class="h-24  w-4 bg-primary">
+                        <div class="md:h-24 h-12 w-2 md:w-4 bg-primary">
                         </div>
-                        <h1 class=" uppercase text-4xl items-center font-bold"> What we do</h1>
+                        <h1 class=" uppercase text-2xl md:text-4xl items-center font-bold"> What we do</h1>
                     </div>
 
                     <div class="space-y-5">
-                        <h1 class="text-2xl font-bold">Some of our philantropic Work we have done</h1>
+                        <h1 class="md:text-2xl text-xl text-left font-bold">Some of our philanthropic work we have done</h1>
                         <p class="text-base">
                             Dr. Danjuma Adamu Dabo Foundation is a non-profitable organization established with no view
                             to generating profit and in which no part of the organization's income is distributed to its
@@ -204,7 +204,7 @@
                 </div>
             </div>
 
-            <div class="rounded-2xl">
+            <div class="px-2 rounded-2xl">
                 <img class="rounded-2xl" src="asset/image/adb5.jpg" alt="">
             </div>
 
@@ -217,16 +217,16 @@
         </div>
     </div>
     <div class="w-full py-1 md:text-justify ">
-        <div class=" p-4 md:p-0 space-y-6 mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-7xl ">
+        <div class=" p-4 md:p-0 space-y-6 my-auto mx-auto py-auto md:mt-20 mt-10 w-full md:max-w-7xl ">
             <div class="flex gap-8">
-                <div class="space-y-5 flex items-center">
-                <div class="h-24 w-4 bg-primary">
+                <div class=" flex items-center">
+                <div class="md:h-24 h-12 w-2  md:w-4 bg-primary">
                 </div>
-                <h1 class=" font-bold ml-3 text-4xl"> Our Programs</h1>
+                <h1 class=" font-bold ml-3 text-2xl items-center md:text-4xl"> Our Programs</h1>
                 </div>
 
             </div>
-            <h1 class="text-2xl  font-bold">Some Programs We Have Embarked On</h1>
+            <h1 class="md:text-2xl text-xl font-bold">Some Programs We Have Embarked On</h1>
 
             <div class="flex py-4 md:flex-row flex-col space-y-3 md:space-x-8">
 
@@ -236,12 +236,10 @@
 
                 background-size: cover;
                 ">
-
                     <div class="px-8  text-white space-y-5 py-10">
                         <h1 class="font-bold text-left text-2xl">
                             Provision of Ramadan Iftar for hospitals
                         </h1>
-
                         <p>The foundation also takes to to distribute foods and relief material to the sick members of
                             the communities in hospital for Iftar during the blessed month of Ramadan </p>
 
@@ -280,7 +278,7 @@
                             acquire diverse skills and resources to build a self-reliant
                             future. </p>
                         <div>
-                            <a href="" class="py-2 px-4 bg-white rounded-md text-black" href="#">Learn
+                            <a class="py-2 px-4 bg-white rounded-md text-black" href="#">Learn
                                 more</a>
                         </div>
                     </div>
@@ -289,13 +287,13 @@
         </div>
     </div>
 
-    <div class="w-full py-1 h-[50vh]  ">
-        <div class="rounded-xl h-2/3 bg-blend-darken mt-10 mx-auto py-auto max-w-6xl"
+    <div class="w-full px-2 py-1 h-[50vh]  ">
+        <div class="rounded-xl  h-2/3 bg-blend-darken mt-10 mx-auto py-auto max-w-6xl"
              style="background-image: url('asset/image/adb-11.jpg'); background-color: rgba(62, 40, 5, 0.75);
                background-size: cover;">
 
             <div class=" items-center  text-white flex flex-col justify-center h-full">
-                <h1 class="text-2xl">Your Can Contribute by Joining as a Volunteer Fisabillilah to be part of our
+                <h1 class="md:text-2xl px-5 text-center text-lg ">Your Can Contribute by Joining as a Volunteer Fisabillilah to be part of our
                     Mission</h1>
                 <div class="flex md:flex-row flex-col space-y-8 items-center md:items-start md:space-x-8">
                     <br>

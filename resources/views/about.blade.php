@@ -1,7 +1,7 @@
 <x-guest-layout>
     <div class="pb-10"></div>
 
-    <div class="flex md:flex-row flex-col mx-auto mt-20 w-full  md:max-w-7xl justify-between ">
+    <div class="flex md:flex-row  flex-col mx-auto mt-20 w-full  md:max-w-7xl justify-between">
         <div class="md:w-1/2 w-full p-3 md:p-0 space-y-5">
 
             <div class="flex md:flex-row flex-col gap-8">

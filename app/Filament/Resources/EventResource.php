@@ -15,6 +15,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Str;
 
 class EventResource extends Resource
 {
@@ -43,7 +44,7 @@ class EventResource extends Resource
                     ->dehydrated()
                     ->required()
                     ->maxLength(255)
-                    ->unique(Post::class, 'slug', ignoreRecord: true),
+                    ->unique(Event::class, 'slug', ignoreRecord: true),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
@@ -91,44 +92,44 @@ class EventResource extends Resource
                 ]),
             ]);
     }
-    public static function infolist(Infolist $infolist): Infolist
-    {
-        return $infolist
-            ->schema([
-                Components\Section::make()
-                    ->schema([
-                        Components\Split::make([
-                            Components\Grid::make(2)
-                                ->schema([
-                                    Components\Group::make([
-                                        Components\TextEntry::make('title'),
-                                        Components\TextEntry::make('slug'),
-                                        Components\TextEntry::make('published_at')
-                                            ->badge()
-                                            ->date()
-                                            ->color('success'),
-                                    ]),
-                                    Components\Group::make([
-                                        Components\TextEntry::make('author.name'),
-                                        Components\TextEntry::make('category.name'),
-                                        Components\SpatieTagsEntry::make('tags'),
-                                    ]),
-                                ]),
-                            Components\ImageEntry::make('image')
-                                ->hiddenLabel()
-                                ->grow(false),
-                        ])->from('lg'),
-                    ]),
-                Components\Section::make('Content')
-                    ->schema([
-                        Components\TextEntry::make('content')
-                            ->prose()
-                            ->markdown()
-                            ->hiddenLabel(),
-                    ])
-                    ->collapsible(),
-            ]);
-    }
+//    public static function infolist(Infolist $infolist): Infolist
+//    {
+//        return $infolist
+//            ->schema([
+//                Components\Section::make()
+//                    ->schema([
+//                        Components\Split::make([
+//                            Components\Grid::make(2)
+//                                ->schema([
+//                                    Components\Group::make([
+//                                        Components\TextEntry::make('title'),
+//                                        Components\TextEntry::make('slug'),
+//                                        Components\TextEntry::make('published_at')
+//                                            ->badge()
+//                                            ->date()
+//                                            ->color('success'),
+//                                    ]),
+//                                    Components\Group::make([
+//                                        Components\TextEntry::make('author.name'),
+//                                        Components\TextEntry::make('category.name'),
+//                                        Components\SpatieTagsEntry::make('tags'),
+//                                    ]),
+//                                ]),
+//                            Components\ImageEntry::make('image')
+//                                ->hiddenLabel()
+//                                ->grow(false),
+//                        ])->from('lg'),
+//                    ]),
+//                Components\Section::make('Content')
+//                    ->schema([
+//                        Components\TextEntry::make('content')
+//                            ->prose()
+//                            ->markdown()
+//                            ->hiddenLabel(),
+//                    ])
+//                    ->collapsible(),
+//            ]);
+//    }
     public static function getRelations(): array
     {
         return [

@@ -24,7 +24,7 @@ class EventResource extends Resource
 
     protected static ?string $navigationGroup = 'Event';
 
-    protected static ?string $navigationIcon = 'heroicon-o-document-text';
+    protected static ?string $navigationIcon = 'heroicon-o-calendar';
 
     protected static ?int $navigationSort = 0;
 
@@ -45,15 +45,19 @@ class EventResource extends Resource
                     ->required()
                     ->maxLength(255)
                     ->unique(Event::class, 'slug', ignoreRecord: true),
-                Forms\Components\Textarea::make('description')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Toggle::make('is_published')
-                    ->required(),
+
                 Forms\Components\DatePicker::make('event_date')
                     ->required(),
-                Forms\Components\TextInput::make('event_time')
+                Forms\Components\TimePicker::make('event_time')
                     ->required(),
+                Forms\Components\Toggle::make('is_published')
+                    ->label('Publish')
+                    ->required(),
+                Forms\Components\MarkdownEditor::make('description')
+                    ->label('Content')
+                    ->required()
+                    ->columnSpanFull(),
+
             ]);
     }
 
@@ -66,6 +70,7 @@ class EventResource extends Resource
                 Tables\Columns\TextColumn::make('slug')
                     ->searchable(),
                 Tables\Columns\IconColumn::make('is_published')
+                    ->label('Published')
                     ->boolean(),
                 Tables\Columns\TextColumn::make('event_date')
                     ->date()

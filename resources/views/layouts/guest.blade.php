@@ -132,7 +132,7 @@
                     </div>
 
                         <div class="rounded-full justify-end hover:bg-black hover:text-white bg-white p-2">
-                            <a href="{{ route('blog') }}">
+                            <a href="{{ route('event.show', $event) }}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                      stroke="currentColor" class="w-6 h-6">
                                     <path stroke-linecap="round" stroke-linejoin="round"

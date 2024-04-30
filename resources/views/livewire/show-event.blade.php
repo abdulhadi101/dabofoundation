@@ -9,7 +9,7 @@
 
 
                     <p class="text-base leading-8 my-5">
-                        {{ $event->description  }} </p>
+                        {{ html_entity_decode($event->description) }} </p>
 
                 </div>
 

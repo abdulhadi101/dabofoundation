@@ -1,5 +1,13 @@
 <x-guest-layout>
-    <div x-data="{ images: ['asset/image/background.jpg', 'asset/image/background2.jpg', 'asset/image/background3.jpg'], currentIndex: 0 }">
+    <div x-data="{
+    images: ['asset/image/background.jpg', 'asset/image/background2.jpg', 'asset/image/background3.jpg'],
+    currentIndex: 0,
+    slideInterval: null
+}" x-init="() => {
+    slideInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+    }, 3000);
+}">
         <section id="slider" class="relative bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken" x-bind:style="'background-image: url(' + images[currentIndex] + '); background-color: rgba(41, 40, 43, 0.75); background-repeat: no-repeat; background-size: cover;'">
             <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">
                 <h1 class="mb-4 text-5xl font-black w-full md:w-1/2 text-white md:text-5xl lg:text-6xl">
@@ -27,21 +35,6 @@
         </section>
     </div>
 
-{{--        <section class="bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken  "--}}
-{{--        style=" background-image: url('asset/image/background.jpg'); background-color: rgba(41, 40, 43, 0.75);--}}
-{{--background-repeat: no-repeat; background-size: cover;--}}
-{{--">--}}
-{{--        <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">--}}
-{{--            <h1 class="mb-4 text-5xl font-black w-full  md:w-1/2 text-white md:text-5xl lg:text-6xl">--}}
-{{--                Empowering Lives, Enriching Communities</h1>--}}
-{{--            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">--}}
-{{--                <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md"--}}
-{{--                    href="{{ 'what-we-do' }}">--}}
-{{--                    What we do--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </section>--}}
     <div class="">
         <div
             class="flex md:flex-row flex-col mx-auto py-auto mt-20 w-full text-justify md:max-w-7xl justify-between items-center">

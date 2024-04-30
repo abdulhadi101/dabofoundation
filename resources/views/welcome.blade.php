@@ -6,7 +6,7 @@
 }" x-init="() => {
     slideInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % images.length;
-    }, 3000);
+    }, 5000);
 }">
         <section id="slider" class="relative bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken" x-bind:style="'background-image: url(' + images[currentIndex] + '); background-color: rgba(41, 40, 43, 0.75); background-repeat: no-repeat; background-size: cover;'">
             <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">

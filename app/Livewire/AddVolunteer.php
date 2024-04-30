@@ -13,7 +13,7 @@ class AddVolunteer extends Component
 
     public function save()
     {
-        dd('asas');
+
       $data =  Volunteer::create(
             $this->only(['name', 'phone_number', 'email', 'state', 'address'])
         );

@@ -8,18 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    @livewireStyles
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
 </head>
-<body style="font-family: 'Poppins', sans-serif;" class=" flex flex-col h-screen">
-    <nav class=" bg-primary fixed w-full z-20 ">
-        <div class="bg-secondary px-3 items-center flex justify-between">
-            <a href="/admin" class="flex space-x-2"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#3C6E0F" class="w-6 h-6">
+<body st class=" flex flex-col h-screen">
+    <nav class=" bg-white fixed w-full z-20 ">
+        <div class="bg-primary px-3 text-white font-semibold items-center flex justify-between">
+            <a href="/admin" class="flex space-x-2"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#FFFFFF" class="w-4 h-4">
                 <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
                 </svg>
-                <p class="md:text-base text-sm">My Portal</p>
+                <p class="md:text-sm text-xs">Staff Portal</p>
             </a>
             <div class="flex space-x-2">
                 <a class="bg-black md:block hidden text-white text-sm md:text-base my-1 hover:bg-gray-700 px-2 py-0.5 rounded-md" href="#">Zakat Calculator</a>
@@ -52,24 +55,24 @@
             </div>
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                    class="flex uppercase flex-col p-4 md:p-0 mt-4 md:text-xl text-base  font-bold  border  rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0  ">
                     <li>
                         <a href="{{ route('welcome') }}"
-                            class="block py-2 px-3  {{ request()->is('/') ? 'active text-white' : '' }} rounded md:bg-transparent  md:p-0 "
+                            class="block py-2 px-3  text-gray-800 {{ request()->is('/') ? 'active text-primary' : '' }} rounded md:bg-transparent  md:p-0 "
                             aria-current="page">Home</a>
                     </li>
                     <li>
                         <a href="{{ route('about') }}"
-                            class="block py-2 px-3 text-gray-900 {{ request()->is('about') ? 'active text-white' : '' }} rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0    dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                            class="block py-2 px-3 text-gray-800 {{ request()->is('about') ? 'active text-primary' : '' }} rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 ">About</a>
                     </li>
                     <li>
                         <a href="{{ route('what-we-do') }}"
-                            class="block py-2 px-3 text-gray-900 {{ request()->is('what-we-do') ? 'active text-white' : '' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0  dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">What
+                            class="block py-2 px-3 text-gray-800 {{ request()->is('what-we-do') ? 'active text-primary' : '' }} rounded hover:bg-gray-100 md:hover:bg-transparent md:p-0  ">What
                             We Do</a>
                     </li>
                     <li>
                         <a href="{{ route('contact') }}"
-                            class="block py-2 px-3 text-gray-900 rounded {{ request()->is('contact') ? 'active text-white' : '' }} hover:bg-gray-100 md:hover:bg-transparent  md:p-0 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact
+                            class="block py-2 px-3 text-gray-800 rounded {{ request()->is('contact') ? 'active text-primary' : '' }} hover:bg-gray-100 md:hover:bg-transparent  md:p-0 ">Contact
                             Us</a>
                     </li>
                     <li>
@@ -87,6 +90,58 @@
             {{ $slot }}
         </div>
 
+        @if(request()->routeIs('welcome'))
+            <div class=" px-2 md:px-0 max-w-6xl mx-auto justify-start">
+                <div class="flex items-center py-auto space-x-10">
+                    <div class="flex gap-8">
+                        <div class=" flex items-center">
+                            <div class="md:h-24 h-12 w-2  md:w-4 bg-primary">
+                            </div>
+                            <h1 class=" font-bold ml-8 text-2xl items-center md:text-4xl">Events</h1>
+                        </div>
+
+                    </div>
+
+
+                </div>
+                <p class="text-lg text-center font-bold">Some of Our Past Events</p>
+                <div class="flex md:flex-row flex-col mx-auto w-full py-auto my-10 space-y-3 md:space-x-10 items-center">
+
+                    <!-- component -->
+                    @forelse($past_events as $past_event)
+                        <div class="max-w-lg mx-auto">
+                            <div class="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                                <a href="#">
+
+                                    <img class="rounded-t-lg h-72 w-full "  src="{{  asset('storage/'.$past_event->thumbnail) }}" alt="">
+                                </a>
+                                {{--  Name of Event--}}
+                                <div class="p-5">
+                                    <a href="#">
+                                        <h5 class="text-gray-900 font-bold text-2xl tracking-tight mb-2"> {{  $past_event->name }}</h5>
+                                    </a>
+                                    {{--  description of Event--}}
+                                    <p class="font-normal line-clamp-5 text-balance text-gray-700 mb-3">{{  $past_event->description }}</p>
+                                    <a class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                                       href="{{ route('event.show', $past_event) }}">
+                                        Read more
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                    @endforelse
+
+
+                </div>
+            </div>
+
+        @else
+            <p></p>
+        @endif
+
+
+
         @if(request()->routeIs('event.index'))
             <p></p>
         @else
@@ -96,17 +151,20 @@
                     <div class=" flex items-center">
                         <div class="md:h-24 h-12 w-2  md:w-4 bg-primary">
                         </div>
-                        <h1 class=" font-bold ml-3 text-2xl items-center md:text-4xl"> Our Events</h1>
+                        <h1 class=" font-bold ml-8 text-2xl items-center md:text-4xl"> Upcoming Events</h1>
                     </div>
 
                 </div>
 
 
             </div>
-            <p>Check out our latest Upcoming Events!</p>
+            <p class="text-lg text-center font-bold">Check out our latest Upcoming Events!</p>
             <div class="flex md:flex-row flex-col mx-auto w-full py-auto my-10 space-y-3 md:space-x-10 items-center">
 
                 @forelse($events as $event)
+
+
+
                     <div class="flex space-x-5 md:w-1/2 justify-between rounded-xl bg-secondary px-8 py-10 items-center">
                     <div class="flex space-x-4">
                         <div>

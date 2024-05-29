@@ -10,11 +10,11 @@
 }">
         <section id="slider" class="relative bg-center h-[100vh] flex flex-col items-center justify-center bg-blend-darken" x-bind:style="'background-image: url(' + images[currentIndex] + '); background-color: rgba(41, 40, 43, 0.75); background-repeat: no-repeat; background-size: cover;'">
             <div class="max-w-screen-xl space-y-10 text-left px-3 md:px-0 py-12 lg:py-28">
-                <h1 class="mb-4 text-5xl font-black w-full md:w-1/2 text-white md:text-5xl lg:text-6xl">
+                <h1 class="mb-4 text-5xl font-black w-full md:w-1/2 text-white md:text-7xl lg:text-8xl">
                     Empowering Lives, Enriching Communities
                 </h1>
                 <div class="flex flex-col space-y-4 sm:flex-row sm:justify-start sm:space-y-0 sm:space-x-4">
-                    <a class="px-8 py-3 w-fit text-sm hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md" href="{{ 'what-we-do' }}">
+                    <a class="px-8 py-3 w-fit font-bold uppercase text-lg hover:text-white hover:bg-primary font-bold text-black bg-white rounded-md" href="{{ 'what-we-do' }}">
                         What we do
                     </a>
                 </div>
@@ -215,11 +215,11 @@
                 <div class=" flex items-center">
                 <div class="md:h-24 h-12 w-2  md:w-4 bg-primary">
                 </div>
-                <h1 class=" font-bold ml-3 text-2xl items-center md:text-4xl"> Our Programs</h1>
+                <h1 class=" font-bold ml-8 uppercase text-2xl items-center md:text-4xl"> Our Programs</h1>
                 </div>
 
             </div>
-            <h1 class="md:text-2xl text-xl font-bold">Some Programs We Have Embarked On</h1>
+            <h1 class="md:text-2xl uppercase text-xl font-bold">Some Programs We Have Embarked On</h1>
 
             <div class="flex py-4 md:flex-row flex-col space-y-3 md:space-x-8">
 
@@ -287,11 +287,11 @@
 
             <div class=" items-center  text-white flex flex-col justify-center h-full">
                 <h1 class="md:text-2xl px-5 text-center text-lg ">Your Can Contribute by Joining as a Volunteer Fisabillilah to be part of our
-                    Mission</h1>
+                    Mission. As a volunteer, you will have the chance to acquire valuable experience, connect with new people, make meaningful contributions to important causes, and also earn Allah's reward</h1>
                 <div class="flex md:flex-row flex-col space-y-8 items-center md:items-start md:space-x-8">
                     <br>
                     <div>
-                        <a class="py-2 px-4 bg-primary rounded-md text-white font-semibold" href="{{ route('volunteer') }}">Join as a
+                        <a class="py-2 px-4 bg-primary rounded-md uppercase text-white font-semibold" href="{{ route('volunteer') }}">Join as a
                             Volunteer</a>
                     </div>
                 </div>

@@ -32,6 +32,15 @@ class EventResource extends Resource
     {
         return $form
             ->schema([
+
+                Forms\Components\FileUpload::make('thumbnail')
+                    ->required()
+                    ->image()
+                    ->columnSpanFull()
+                    ->imageEditor(),
+
+
+
                 Forms\Components\TextInput::make('name')
                     ->required()
                     ->live(onBlur: true)
@@ -56,6 +65,15 @@ class EventResource extends Resource
                 Forms\Components\MarkdownEditor::make('description')
                     ->label('Content')
                     ->required()
+
+                    ->columnSpanFull(),
+
+                Forms\Components\FileUpload::make('event_images')
+                    ->label('Pictures from Event')
+                    ->required()
+                    ->image()
+                    ->imageEditor()
+                    ->multiple()
                     ->columnSpanFull(),
 
             ]);

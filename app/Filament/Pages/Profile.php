@@ -49,20 +49,20 @@ class Profile extends Page implements HasForms
                                     ->email()
                                     ->required()
                                     ->maxLength(255),
-                                Forms\Components\TextInput::make('phone')
-                                    ->tel()
-                                    ->required()
-                                    ->maxLength(255),
+//                                Forms\Components\TextInput::make('phone')
+//                                    ->tel()
+//                                    ->required()
+//                                    ->maxLength(255),
 
-                                Forms\Components\Select::make('role')
-                                    ->required()
-                                    ->disabled()
-                                    ->options([
-                                        'doctor' => 'Doctor',
-                                        'receptions' => 'Reception',
-                                        'admin' => 'Admin',
-                                        'lab' => 'Laboratory',
-                                    ]),
+//                                Forms\Components\Select::make('role')
+//                                    ->required()
+//                                    ->disabled()
+//                                    ->options([
+//                                        'doctor' => 'Doctor',
+//                                        'receptions' => 'Reception',
+//                                        'admin' => 'Admin',
+//                                        'lab' => 'Laboratory',
+//                                    ]),
 
                                 Forms\Components\TextInput::make('password')
                                     ->password()

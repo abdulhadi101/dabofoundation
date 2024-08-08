@@ -29,14 +29,15 @@
     <h1 class="font-bold underline text-4xl">Event Pictures</h1>
 </div>
         <div class="grid grid-cols-2">
+            @if($event->event_images)
         @forelse($event->event_images as $image)
                <div class=" bg-white p-3">
                     <img class=" w-full object-cover" height="800px" width="800px" src="{{  asset('storage/'.$image) }}"  alt=""/>
-
                 </div>
         @empty
             <p></p>
         @endforelse
+            @endif
         </div>
     </div>
 
